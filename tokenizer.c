@@ -11,7 +11,7 @@ struct TokenizerT_ {
   char * token_index;   // Current token index
   char * token_stream;  // Copy of argv[1]
   char * current_token; // My current_token
-  char  * token_holder;
+  char * token_holder;  // Temp <- this could be optimized more.
 };
 
 typedef struct TokenizerT_ TokenizerT;
@@ -217,7 +217,10 @@ int main(int argc, char **argv) {
   }
   else
   {
-	//Needs while loop to call the program to begin tokenize
+    /*
+    *
+    * Removed the while loop. To prevent new brunswick students from stealing my code :)
+    */
     char *ts = argv[1]; 
     tk = TKCreate(ts);
     TKGetNextToken(tk);
